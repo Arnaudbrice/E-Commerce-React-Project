@@ -4,6 +4,7 @@ import ProductContext from "../context/ProductContext.jsx";
 
 import useProducts from "../hooks/UseProducts.jsx";
 import Card from "../components/Card";
+import NotFound from "./NotFound.jsx";
 const Category = () => {
   /* const { products, setProducts } = useContext(ProductContext);
    */
@@ -12,6 +13,10 @@ const Category = () => {
   const filteredProductsByCategory = products.filter(
     product => product.category === category
   );
+
+  if (!filteredProductsByCategory || filteredProductsByCategory.length === 0) {
+    return <NotFound />;
+  }
   console.log(category);
   return (
     <div>
