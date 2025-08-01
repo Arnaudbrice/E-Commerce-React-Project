@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import ButtonGroup from "../components/ButtonGroup";
-import useProducts from "../hooks/UseProducts.jsx";
+import useProducts from "../hooks/useProducts.jsx";
 
 const Cart = () => {
   const {

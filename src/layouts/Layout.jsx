@@ -3,7 +3,7 @@ import { ToastContainer, Bounce, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, Outlet } from "react-router";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import useProducts from "../hooks/UseProducts";
+import useProducts from "../hooks/useProducts";
 import Footer from "../components/Footer";
 const Layout = () => {
   const { cartProductsQuantity } = useProducts();

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from "react-router";
 import ProductContext from "../context/ProductContext.jsx";
 
-import useProducts from "../hooks/UseProducts.jsx";
+import useProducts from "../hooks/useProducts.jsx";
 import Card from "../components/Card";
 import NotFound from "./NotFound.jsx";
 const Category = () => {
