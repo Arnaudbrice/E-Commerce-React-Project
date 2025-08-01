@@ -8,6 +8,7 @@ import Cards from "./components/Cards.jsx";
 import Category from "./pages/Category.jsx";
 import { ProductProvider } from "./context/ProductContext.jsx";
 import Footer from "./components/Footer.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,8 @@ function App() {
               <Route path="/category/:category" element={<Category />} />
             </Route>
           </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ProductProvider>
     </div>
