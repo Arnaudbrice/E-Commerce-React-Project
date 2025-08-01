@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import useProducts from "../hooks/UseProducts.jsx";
+import useProducts from "../hooks/useProducts.jsx";
 import ButtonGroup from "./ButtonGroup.jsx";
 
 const Card = ({

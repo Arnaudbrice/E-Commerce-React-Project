@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import Card from "./Card";
 import ProductContext from "../context/ProductContext.jsx";
-import useProducts from "../hooks/UseProducts.jsx";
+import useProducts from "../hooks/useProducts.jsx";
 const Cards = () => {
   /*   const { products, setProducts } = useContext(ProductContext); */
 
