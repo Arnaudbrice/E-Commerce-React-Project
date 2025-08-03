@@ -20,10 +20,10 @@ const Category = () => {
   console.log(category);
   return (
     <div>
-      <h1 className="text-center my-6 text-3xl font-bold ">
+      <h1 className="my-6 text-3xl font-bold text-center ">
         Category {category}
       </h1>
-      <div className="grid grid-cols-[300px]  sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6 min-h-full place-content-center text-gray-400 my-6 mx-0 sm:mx-6 auto-rows-min  ">
+      <div className="grid min-h-full grid-cols-2 gap-6 mx-0 my-6 text-gray-400 md:grid-cols-3 lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] place-content-center sm:mx-6 auto-rows-min ">
         {filteredProductsByCategory.map(product => {
           return <Card key={product.id} {...product} />;
         })}

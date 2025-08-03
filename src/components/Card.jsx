@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 import { toast } from "react-toastify";
 import useProducts from "../hooks/useProducts.jsx";
 import ButtonGroup from "./ButtonGroup.jsx";
@@ -90,39 +91,41 @@ const Card = ({
       // update the  quantity of the products added in the cart
       setCartProductsQuantity(prevQuantity => prevQuantity + 1);
       // setProductQuantity(newProductQuantity);
+
+      toast.success("Product Added to Cart Successfully!");
     }
   };
   return (
     <div className="card card-lg  bg-base-100 h-full shadow-sm  transition-transform duration-200 hover:scale-105 hover:drop-shadow-[0_0_10px_gray]  border rounded-lg  ">
       <figure>
         <img
-          className="w-full h-52 block object-contain aspect-square  bg-white"
+          className="block object-contain w-full bg-white h-52 aspect-square"
           src={image}
           alt={title}
         />
       </figure>
-      <div className="card-body px-4    ">
-        <h2 className="card-title truncate ">{title}</h2>
+      <div className="px-4 card-body ">
+        <h2 className="truncate card-title ">{title}</h2>
         <p className="text-left">
           {price.toFixed(2)}
           {" €"}
         </p>
 
-        <div className="card-actions w-full justify-between items-center  ">
+        <div className="items-center justify-between w-full card-actions ">
           {/* TODO:
           -on click on more from category show a page with all articles from this category
           -add href to the page to be called */}
 
-          <a
-            className="text-xs  hover:link my-4 sm:my-none"
-            href={`/category/${category}`}
+          <Link
+            className="my-4 text-xs hover:link sm:my-none"
+            to={`/category/${category}`}
           >
             More from {category}
-          </a>
+          </Link>
           {!isClicked ? (
             <button
               onClick={() => handleAddToCartListClick(id)}
-              className="btn btn-primary  "
+              className="btn btn-primary "
             >
               Add To Cart
             </button>
