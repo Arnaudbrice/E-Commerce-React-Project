@@ -4,6 +4,8 @@ const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -16,6 +18,10 @@ export const ProductProvider = ({ children }) => {
         setProducts(data);
       } catch (error) {
         console.error(error);
+        setIsLoading(false);
+        setError(true);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -30,6 +36,11 @@ export const ProductProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartList));
+
+    const newCartProductsQuantity = cartList.reduce((acc, item) => {
+      return acc + item.productQuantity;
+    }, 0);
+    setCartProductsQuantity(newCartProductsQuantity);
   }, [cartList]);
 
   const [cartProductsQuantity, setCartProductsQuantity] = useState(0);
@@ -41,7 +52,9 @@ export const ProductProvider = ({ children }) => {
         cartList,
         setCartList,
         cartProductsQuantity,
-        setCartProductsQuantity
+        setCartProductsQuantity,
+        isLoading,
+        error
       }}
     >
       {children}

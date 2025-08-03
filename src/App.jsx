@@ -17,7 +17,7 @@ function App() {
   console.log("isCategoryPage", isCategoryPage);
   return (
     <div
-      className="min-h-screen w-full grid-rows-[auto_1fr_auto]
+      className="min-h-screen w-full grid grid-rows-[auto_1fr_auto]
         font-['Outfit']  "
     >
       <ProductProvider>

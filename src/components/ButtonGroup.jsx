@@ -2,7 +2,7 @@ import React from "react";
 
 const ButtonGroup = props => {
   return (
-    <div className="flex flex-row justify-center items-center gap-x-2 px-4 my-4">
+    <div className="flex flex-row items-center justify-center px-4 gap-x-2 ">
       <button className="btn btn-primary" onClick={props.handleRemove}>
         -
       </button>
