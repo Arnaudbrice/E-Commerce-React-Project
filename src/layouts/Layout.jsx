@@ -40,13 +40,13 @@ const Layout = () => {
                 className="py-4 my-4 mt-3 space-y-8 text-white border rounded-lg shadow w-3xs bg-base-100 menu menu-sm dropdown-content z-1 border-amber-50"
               >
                 <Link
-                  className="text-lg hover:py-6 hover:bg-fuchsia-600 btn btn-ghost"
+                  className="text-lg hover:py-6 hover:bg-fuchsia-600 focus:bg-fuchsia-600 btn btn-ghost"
                   to="/"
                 >
                   Home
                 </Link>
                 <Link
-                  className="text-lg hover:py-6 btn btn-ghost hover:bg-fuchsia-600"
+                  className="text-lg hover:py-6 btn btn-ghost hover:bg-fuchsia-600 focus:bg-fuchsia-600"
                   to="/cart"
                 >
                   <div className="flex indicator">
